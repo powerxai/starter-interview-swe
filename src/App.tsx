@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from './logo.gif';
-import { Note } from './components/Note';
-import './App.css';
-import { Login } from './components/Login';
+import React from "react";
+import logo from "./logo.gif";
+import { Note } from "./components/Note";
+import "./App.css";
+import { Login } from "./components/Login";
 
 function App() {
   return (
