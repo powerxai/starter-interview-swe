@@ -1,15 +1,17 @@
 import React from 'react';
-// import logo from '../public/logo512.png';
-import { Note } from './components/note';
+import logo from './logo.gif';
+import { Note } from './components/Note';
 import './App.css';
+import { Login } from './components/Login';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/logo512.png" className="App-logo" alt="logo" />
-        <Note />
+        <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Login />
+      <Note />
     </div>
   );
 }
