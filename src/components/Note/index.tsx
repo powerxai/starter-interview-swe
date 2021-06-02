@@ -1,13 +1,16 @@
-import React from 'react';
-import { useAppSelector } from '../../app/hooks';
-import { selectAuth, LoginStatus } from '../Login/authslice';
+import React from "react";
+import { useAppSelector } from "../../app/hooks";
+import { selectAuth, LoginStatus } from "../Login/authslice";
 
 export function Note() {
-
   const auth = useAppSelector(selectAuth);
-  const loggedIn = auth.status === LoginStatus.LOGGED_IN;
 
-  if (!loggedIn) return null;
+  if (auth.status !== LoginStatus.LOGGED_IN) return null;
+  const {
+    apiToken,
+    user: { id: userId },
+  } = auth;
+
   return (
     <div>
       <NoteField />
@@ -16,5 +19,5 @@ export function Note() {
 }
 
 function NoteField() {
-  return <textarea >Note goes here...</textarea>;
+  return <textarea defaultValue="Note goes here..."></textarea>;
 }
